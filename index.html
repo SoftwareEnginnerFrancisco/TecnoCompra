@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo accesible de catálogo de productos tecnológicos.">
+  <title>TecnoCompra | Catálogo tecnológico</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="TecnoCompra, inicio">Tecno<span>Compra</span></a>
+      <form id="search-form" class="search" role="search">
+        <label class="sr-only" for="search-input">Buscar productos</label>
+        <input id="search-input" name="q" type="search" placeholder="Buscar computadores, celulares..." autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+      <button id="cart-toggle" class="cart-toggle" type="button" aria-controls="cart-panel" aria-expanded="false">
+        Carrito <span id="cart-count" class="count" aria-label="0 productos">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Tecnología para todos</p>
+      <h1 id="page-title">Encuentra tu próximo dispositivo</h1>
+      <p>Explora productos, compara información y agrega tus favoritos al carrito.</p>
+    </section>
+
+    <section id="cart-panel" class="cart-panel" aria-labelledby="cart-title" hidden>
+      <div class="cart-heading">
+        <h2 id="cart-title">Tu carrito</h2>
+        <button id="cart-close" class="secondary-button" type="button">Cerrar carrito</button>
+      </div>
+      <p id="cart-empty">Todavía no has agregado productos.</p>
+      <ul id="cart-items" class="cart-items"></ul>
+      <p class="cart-total"><strong>Total:</strong> <span id="cart-total">$0</span></p>
+      <button id="clear-cart" class="secondary-button" type="button">Vaciar carrito</button>
+      <p class="demo-note">Prototipo académico: no procesa pagos reales.</p>
+    </section>
+
+    <div class="catalog-heading">
+      <div>
+        <h2>Catálogo de productos</h2>
+        <p id="results-summary" aria-live="polite">Mostrando todos los productos.</p>
+      </div>
+      <label class="sort-label" for="sort-select">Ordenar por
+        <select id="sort-select">
+          <option value="featured">Recomendados</option>
+          <option value="price-asc">Precio: menor a mayor</option>
+          <option value="price-desc">Precio: mayor a menor</option>
+          <option value="name">Nombre A–Z</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="product-grid" class="product-grid" aria-label="Productos disponibles"></div>
+    <p id="no-results" class="no-results" hidden>No encontramos productos con esa búsqueda. Prueba con otro término.</p>
+    <div id="status-message" class="status-message" role="status" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>TecnoCompra</strong> · Prototipo académico de interfaz web.</p>
+      <p>Diseñado con criterios de claridad, consistencia, retroalimentación y accesibilidad.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
